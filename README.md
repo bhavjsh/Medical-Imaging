@@ -1,4 +1,4 @@
-# 🧠 Brain Tumor MRI Detection
+Brain Tumor MRI Detection
 
 ## Overview
 This project uses **Deep Learning (CNN)** to detect whether an MRI scan of the brain shows a **Tumor** or **No Tumor**.  
@@ -21,11 +21,11 @@ To build an image classification model that can automatically identify brain tum
 > 
 data/
 ├── train/
-│ ├── Tumor/
-│ └── No Tumor/
+│   ├── Tumor/
+│   └── No Tumor/
 └── val/
-├── Tumor/
-└── No Tumor/
+    ├── Tumor/
+    └── No Tumor/
 
 
 
