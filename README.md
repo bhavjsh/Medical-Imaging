@@ -2,7 +2,7 @@
 
 ## Overview
 This project uses **Deep Learning (CNN)** to detect whether an MRI scan of the brain shows a **Tumor** or **No Tumor**.  
-It demonstrates all key steps — dataset preparation, training, testing, and visualization — using **TensorFlow** and **Keras**.
+It demonstrates all key steps dataset preparation, training, testing, and visualization using **TensorFlow** and **Keras**.
 
 ---
 
@@ -18,6 +18,7 @@ To build an image classification model that can automatically identify brain tum
 
 > The dataset is not uploaded here due to size limits.  
 > After downloading from Kaggle, arrange it as:
+> 
 data/
 ├── train/
 │ ├── Tumor/
@@ -26,8 +27,7 @@ data/
 ├── Tumor/
 └── No Tumor/
 
-yaml
-Copy code
+
 
 ---
 
@@ -46,14 +46,13 @@ Copy code
    cd Medical-Imaging
 Install dependencies
 
-bash
-Copy code
+
 pip install tensorflow matplotlib numpy pillow scikit-learn
 Open and run the notebook
 
-bash
-Copy code
+
 jupyter notebook BrainTumor_Project.ipynb
+
 Results
 Validation Accuracy: ~88%
 
@@ -71,11 +70,9 @@ Clinical Relevance
 This model helps radiologists in faster MRI screening, improving diagnostic accuracy and reducing manual workload.
 
 Project Files
-css
-Copy code
+
 BrainTumor_Project.ipynb   → Main code notebook  
 Report.docx                → Detailed project report  
 Slides.pptx                → Presentation slides  
 README.md                  → Project summary  
-yaml
-Copy code
+
