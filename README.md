@@ -19,6 +19,7 @@ To build an image classification model that can automatically identify brain tum
 > The dataset is not uploaded here due to size limits.  
 > After downloading from Kaggle, arrange it as:
 > 
+```text
 data/
 ├── train/
 │   ├── Tumor/
