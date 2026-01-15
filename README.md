@@ -1,207 +1,186 @@
-Brain Tumor MRI Detection using Deep Learning
+# 🧠 Brain Tumor MRI Detection using Deep Learning
 
-This project focuses on the automated detection of brain tumors from MRI images using Deep Learning, specifically Convolutional Neural Networks (CNNs). The goal is to classify brain MRI scans into two categories: Tumor and No Tumor, helping demonstrate how AI can assist in medical image analysis.
+This project demonstrates an automated approach for detecting **brain tumors from MRI images** using **Deep Learning** techniques. A **Convolutional Neural Network (CNN)** is trained to classify MRI scans into **Tumor** and **No Tumor**, highlighting the potential of AI in medical image analysis.
 
-📌 Project Overview
+---
 
-Manual analysis of MRI scans is time-consuming and highly dependent on expert radiologists. With the increasing number of medical images generated daily, there is a strong need for automated and reliable diagnostic support systems.
+## 📌 Project Overview
+
+Manual examination of MRI scans is time-consuming and highly dependent on expert radiologists. With the increasing volume of medical imaging data, automated diagnostic support systems are becoming essential.
 
 In this project:
+- Brain MRI images are classified using a CNN
+- The model learns visual patterns associated with tumors
+- Performance is evaluated using standard classification metrics
+- Results are visualized to assess model reliability
 
-A custom CNN model is trained on brain MRI images.
+---
 
-The model learns visual patterns associated with tumors.
+## 📂 Dataset
 
-Performance is evaluated using multiple classification metrics.
+- **Source:** Kaggle – Brain MRI Images for Brain Tumor Detection  
+  https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection
 
-Visual results are analyzed to understand model behavior.
+- **Classes:**  
+  - Tumor  
+  - No Tumor  
 
-📂 Dataset
+- **Total Images:** 253  
+  - Training set: ~80%  
+  - Validation set: ~20%
 
-Source: Kaggle – Brain MRI Images for Brain Tumor Detection
-https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection
+> ⚠️ The dataset is **not included** in this repository due to size constraints.
 
-Classes:
+### Expected Directory Structure
 
-Tumor
-
-No Tumor
-
-Total Images: 253
-
-Training set: ~80%
-
-Validation set: ~20%
-
-⚠️ The dataset is not included in this repository due to size limitations.
-
-Expected Folder Structure
 data/
 ├── train/
-│   ├── Tumor/
-│   └── No Tumor/
+│ ├── Tumor/
+│ └── No Tumor/
 └── val/
-    ├── Tumor/
-    └── No Tumor/
+├── Tumor/
+└── No Tumor/
 
-🔍 Exploratory Data Analysis (EDA)
+yaml
+Copy code
 
-EDA was performed to understand the dataset before training:
+---
 
-Visualized random MRI samples from both classes
+## 🔍 Exploratory Data Analysis (EDA)
 
-Checked class distribution (slight class imbalance observed)
+Exploratory Data Analysis was performed to understand the dataset before model training.
 
-Verified image formats and integrity
+**Key EDA steps:**
+- Visualized random MRI samples from both classes
+- Checked class distribution and balance
+- Verified image formats and integrity
+- Observed pixel intensity and contrast variations
 
-Observed intensity patterns and contrast variations
+EDA confirmed that the dataset was clean, consistent, and suitable for CNN-based modeling.
 
-This analysis confirmed that the dataset was suitable for CNN-based modeling after preprocessing.
+---
 
-⚙️ Data Preprocessing
+## ⚙️ Data Preprocessing
 
-The following preprocessing steps were applied:
+The following preprocessing techniques were applied:
 
-Resized all images to a fixed input size
+- Resized images to a uniform input size
+- Normalized pixel values to the range [0, 1]
+- Applied data augmentation:
+  - Rotation
+  - Horizontal flipping
+  - Zooming
+- Used class weights to reduce the effect of class imbalance
 
-Normalized pixel values to the range [0, 1]
+---
 
-Applied data augmentation techniques such as:
+## 🧠 Model Architecture
 
-Rotation
+A **custom CNN model** was developed from scratch, consisting of:
 
-Horizontal flipping
+- Convolutional layers with ReLU activation
+- Max-pooling layers for feature reduction
+- Fully connected (dense) layers
+- Dropout for regularization
+- Sigmoid activation for binary classification
 
-Zooming
+The architecture was kept lightweight to allow training on a CPU environment.
 
-Used class weights to handle minor class imbalance
+---
 
-🧠 Model Architecture
+## 🏋️ Model Training
 
-A custom CNN model was built from scratch with the following key components:
+- **Framework:** TensorFlow / Keras  
+- **Optimizer:** Adam  
+- **Loss Function:** Binary Cross-Entropy  
+- **Batch Size:** 8  
+- **Epochs:** 10  
+- **Hardware:** CPU  
 
-Convolutional layers with ReLU activation
+**Training observations:**
+- Accuracy improved steadily from ~65% to ~88%
+- Loss decreased consistently
+- Training and validation curves showed stable learning
+- No major overfitting was observed
 
-Max-pooling layers for spatial reduction
+The trained model was saved for future use.
 
-Fully connected (dense) layers
+---
 
-Dropout for regularization
+## 📊 Model Evaluation
 
-Sigmoid activation for binary classification
+The model was evaluated on the validation dataset using multiple metrics.
 
-The model was intentionally kept lightweight to allow training on a CPU environment.
+| Metric      | Score |
+|-------------|-------|
+| Accuracy    | 0.88  |
+| Precision   | 0.85  |
+| Recall      | 0.89  |
+| F1-Score    | 0.87  |
+| ROC-AUC     | 0.90  |
 
-🏋️ Model Training
+**Evaluation insights:**
+- Strong true positive and true negative rates
+- Most errors occurred on images with faint tumor boundaries
+- ROC curve indicated good class separation
+- Visual predictions showed reliable generalization
 
-Framework: TensorFlow / Keras
+---
 
-Optimizer: Adam
-
-Loss Function: Binary Cross-Entropy
-
-Batch Size: 8
-
-Epochs: 10
-
-Hardware: CPU
-
-Training Observations
-
-Accuracy improved steadily from ~65% to ~88%
-
-Training and validation curves showed stable learning
-
-No significant overfitting was observed
-
-The trained model was saved for reuse:
-
-model_a.keras
-
-checkpoint_best.keras
-
-📊 Model Evaluation
-
-The model was evaluated on the validation dataset using standard metrics:
-
-Metric	Score
-Accuracy	0.88
-Precision	0.85
-Recall	0.89
-F1-Score	0.87
-ROC-AUC	0.90
-Additional Analysis
-
-Confusion matrix showed strong true positive and true negative rates
-
-ROC curve demonstrated good class separation
-
-Visual prediction samples confirmed reliable generalization
-
-🖼️ Visualization Results
+## 🖼️ Visualization Results
 
 The notebook includes:
+- Class distribution plots
+- Sample MRI images from both classes
+- Confusion matrix visualization
+- ROC curve
+- Correct and incorrect prediction examples
 
-Class distribution plots
+These visualizations help interpret model performance and behavior.
 
-Sample MRI images from both classes
+---
 
-Confusion matrix visualization
+## 🏥 Clinical Relevance
 
-ROC curve
+This project demonstrates how AI can support medical imaging workflows by:
 
-Correctly and incorrectly classified MRI examples
+- Assisting in early brain tumor screening
+- Reducing diagnostic workload
+- Supporting radiologists in prioritizing critical cases
+- Improving efficiency in healthcare environments
 
-These visualizations help interpret model behavior and performance.
+> This system is intended as a **decision-support tool**, not a replacement for medical professionals.
 
-🏥 Clinical Relevance
+---
 
-Although not intended to replace radiologists, this system demonstrates how AI can:
+## ⚠️ Limitations & Future Work
 
-Assist in early brain tumor screening
+**Current limitations:**
+- Small dataset size
+- Training limited to CPU hardware
+- Limited model interpretability
 
-Reduce diagnostic workload
+**Future improvements:**
+- Use larger and more diverse MRI datasets
+- Experiment with pre-trained models (ResNet, EfficientNet)
+- Apply explainable AI techniques such as Grad-CAM
+- Optimize the model for real-world clinical deployment
 
-Support decision-making in resource-limited settings
+---
 
-Improve efficiency in medical imaging workflows
+## ▶️ How to Run the Project
 
-⚠️ Limitations & Future Work
-
-Current Limitations
-
-Small dataset size
-
-Training performed on CPU
-
-Limited model interpretability
-
-Future Improvements
-
-Use larger and more diverse datasets
-
-Experiment with pre-trained models (ResNet, EfficientNet)
-
-Apply explainable AI techniques (e.g., Grad-CAM)
-
-Optimize model for clinical deployment
-
-▶️ How to Run
-
-Clone the repository:
-
+1. Clone the repository:
 git clone https://github.com/bhavjsh/Medical-Imaging.git
 cd Medical-Imaging
 
+2. Download the dataset from Kaggle and organize it as shown above.
 
-Download the dataset from Kaggle and arrange it as shown above.
-
-Open the notebook:
+3. Open the notebook:
 
 jupyter notebook BrainTumor_Project.ipynb
 
-
-Run all cells sequentially.
+4 .Run all cells sequentially.
 
 📁 Repository Contents
 
@@ -218,5 +197,4 @@ model_a.keras – Trained CNN model
 checkpoint_best.keras – Best model checkpoint
 
 ✅ Conclusion
-
-This project demonstrates the practical application of deep learning in medical imaging. The CNN model successfully learned meaningful patterns from MRI scans and achieved strong performance, highlighting the potential of AI-assisted diagnostic tools in healthcare.
+This project successfully demonstrates the application of deep learning for brain tumor detection from MRI scans. The CNN model achieved strong performance and highlights the potential of AI-assisted diagnostic tools in medical imaging.
