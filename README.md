@@ -1,10 +1,10 @@
-# 🧠 Brain Tumor MRI Detection using Deep Learning
+# Brain Tumor MRI Detection using Deep Learning
 
 This project demonstrates an automated approach for detecting **brain tumors from MRI images** using **Deep Learning** techniques. A **Convolutional Neural Network (CNN)** is trained to classify MRI scans into **Tumor** and **No Tumor**, highlighting the potential of AI in medical image analysis.
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
 Manual examination of MRI scans is time-consuming and highly dependent on expert radiologists. With the increasing volume of medical imaging data, automated diagnostic support systems are becoming essential.
 
@@ -16,7 +16,7 @@ In this project:
 
 ---
 
-## 📂 Dataset
+##  Dataset
 
 - **Source:** Kaggle – Brain MRI Images for Brain Tumor Detection  
   https://www.kaggle.com/datasets/navoneel/brain-mri-images-for-brain-tumor-detection
@@ -46,7 +46,7 @@ Copy code
 
 ---
 
-## 🔍 Exploratory Data Analysis (EDA)
+## Exploratory Data Analysis (EDA)
 
 Exploratory Data Analysis was performed to understand the dataset before model training.
 
@@ -74,7 +74,7 @@ The following preprocessing techniques were applied:
 
 ---
 
-## 🧠 Model Architecture
+## Model Architecture
 
 A **custom CNN model** was developed from scratch, consisting of:
 
@@ -88,7 +88,7 @@ The architecture was kept lightweight to allow training on a CPU environment.
 
 ---
 
-## 🏋️ Model Training
+##  Model Training
 
 - **Framework:** TensorFlow / Keras  
 - **Optimizer:** Adam  
@@ -107,7 +107,7 @@ The trained model was saved for future use.
 
 ---
 
-## 📊 Model Evaluation
+##  Model Evaluation
 
 The model was evaluated on the validation dataset using multiple metrics.
 
@@ -127,7 +127,7 @@ The model was evaluated on the validation dataset using multiple metrics.
 
 ---
 
-## 🖼️ Visualization Results
+##  Visualization Results
 
 The notebook includes:
 - Class distribution plots
@@ -140,7 +140,7 @@ These visualizations help interpret model performance and behavior.
 
 ---
 
-## 🏥 Clinical Relevance
+## Clinical Relevance
 
 This project demonstrates how AI can support medical imaging workflows by:
 
@@ -153,7 +153,7 @@ This project demonstrates how AI can support medical imaging workflows by:
 
 ---
 
-## ⚠️ Limitations & Future Work
+##  Limitations & Future Work
 
 **Current limitations:**
 - Small dataset size
@@ -168,7 +168,7 @@ This project demonstrates how AI can support medical imaging workflows by:
 
 ---
 
-## ▶️ How to Run the Project
+## How to Run the Project
 
 1. Clone the repository:
 git clone https://github.com/bhavjsh/Medical-Imaging.git
@@ -182,7 +182,7 @@ jupyter notebook BrainTumor_Project.ipynb
 
 4 .Run all cells sequentially.
 
-📁 Repository Contents
+ Repository Contents
 
 BrainTumor_Project.ipynb – Main Jupyter Notebook
 
@@ -196,5 +196,5 @@ model_a.keras – Trained CNN model
 
 checkpoint_best.keras – Best model checkpoint
 
-✅ Conclusion
+ Conclusion
 This project successfully demonstrates the application of deep learning for brain tumor detection from MRI scans. The CNN model achieved strong performance and highlights the potential of AI-assisted diagnostic tools in medical imaging.
